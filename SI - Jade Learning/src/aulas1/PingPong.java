@@ -13,7 +13,7 @@ public class PingPong extends Agent
 		System.out.println(this.getLocalName() + " a começar!");
 		
 		this.addBehaviour(new ReceiveBehaviour());
-		//this.addBehaviour(new AnswerBehaviour());
+		this.addBehaviour(new AnswerBehaviour());
 	}
 
 	@Override
@@ -49,7 +49,7 @@ public class PingPong extends Agent
 			ACLMessage msg = receive();
 			if(msg!=null)
 			{
-				System.out.println("Recebi uma mensagem de "+msg.getSender()+", Conteúdo: "+msg.getContent());
+				System.out.println("Recebi uma mensagem de "+msg.getSender().getName());
 				ACLMessage resp = msg.createReply();
 				
 				if(msg.getContent().equals("ping"))

@@ -24,7 +24,7 @@ public class CyclicSender extends Agent {
 			ACLMessage msg = receive();
 			if (msg!=null)
 			{
-				System.out.println("Recebi uma mesangem de "+msg.getSender()+", Conteúdo: "+msg.getContent());
+				System.out.println("Recebi uma mesangem de "+msg.getSender().getLocalName());
 			}
 		}
 	}
